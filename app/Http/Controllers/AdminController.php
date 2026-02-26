@@ -152,4 +152,20 @@ class AdminController extends Controller
         }
 
     }
+
+    // Public function clearSession(){
+    //     Session::forget('quizDetails');
+    //     Session::forget('count_mcq');
+    //     return redirect()->back();
+    // }    
+    
+    Public function showQuizes(){
+        $admin = Session::get('admin');
+        if ($admin) {
+            $quizes = quiz::get();
+            return view('showQuizes',["name"=>$admin, "quizes"=>$quizes]);
+        }else{
+            return redirect('admin-login');
+        }
+    }
 }
