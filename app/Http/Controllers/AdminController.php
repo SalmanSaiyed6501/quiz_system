@@ -126,7 +126,7 @@ class AdminController extends Controller
 
     public function quitQue(){
          Session::forget('quizDetails');
-         Session::forget('count_mcq');
+         Session::forget('total_mcq');
          return redirect()->back();
     }
 
@@ -145,27 +145,40 @@ class AdminController extends Controller
         $mcq->admin_id = Session::get('admin');
 
         if ($mcq->save()) {
+            Session::put('quizDetails.id', $quiz->id);
             Session::flash('quiz',"Quiz Added Successfully !");
-            $total_mcq = mcq::where('quiz_id', $quiz->id)->get();
-            $count_mcq = count($total_mcq);
-            return redirect()->back()->with(["count_mcq"=>$count_mcq]);
+            $total_mcq = mcq::where('quiz_id', $quiz->id)->count();
+            SESSION::put('total_mcq', $total_mcq);
+            return redirect()->back();
         }
 
     }
 
-    // Public function clearSession(){
-    //     Session::forget('quizDetails');
-    //     Session::forget('count_mcq');
-    //     return redirect()->back();
-    // }    
+    Public function clearSession(){
+        Session::forget('quizDetails');
+        Session::forget('total_mcq');
+        return redirect()->back();
+    }    
     
-    Public function showQuizes(){
+    Public function showMcq(){
         $admin = Session::get('admin');
         if ($admin) {
-            $quizes = quiz::get();
-            return view('showQuizes',["name"=>$admin, "quizes"=>$quizes]);
+            $catname = Session::get('quizDetails.name');
+            $getQue = mcq::where('quiz_id', Session::get('quizDetails.id'))->get();
+            return view('showQue',['getQue'=>$getQue, 'name'=>$admin, 'catname'=>$catname]);
         }else{
             return redirect('admin-login');
+        }
+    }
+
+     public function deleteQue($id){
+        $isDeleted = mcq::find($id)->delete();
+        if ($isDeleted) {
+            Session::forget('total_mcq');
+            Session::flash('category',"Category Deleted Succesfully !");
+            $total_mcq = mcq::where('quiz_id', Session::get('quizDetails.id'))->count();
+            SESSION::put('total_mcq', $total_mcq);
+            return redirect()->back();
         }
     }
 }

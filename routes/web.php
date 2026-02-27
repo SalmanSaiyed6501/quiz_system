@@ -18,5 +18,6 @@ Route::post('addQuiz',[AdminController::class,'addQuiz']);
 Route::get('quitQue',[AdminController::class,'quitQue']);
 
 Route::post('addMcqs',[AdminController::class,'addMcqs']);
-Route::get('showQuizes',[AdminController::class,'showQuizes']);
+Route::get('showMcq',[AdminController::class,'showMcq']);
+Route::get('question/delete/{id}',[AdminController::class,'deleteQue']);
 Route::get('clearSession',[AdminController::class,'clearSession']);

@@ -42,9 +42,11 @@
             <div class="bg-green-500 text-white p-2">{{Session('quiz')}}</div>
             @endif
             <span class="font-bold text-green-600">{{Session('quizDetails.name')}}</span><br>
-            <span class="font-bold text-green-600">Total Questions : {{Session('count_mcq')}}
-                @if(Session('count_mcq') > 0)
-                 <span><a href="/showQuizes/{{Session('quizDetails.id')}}" class="font-bold text-yellow-600">Show Questions</a></span>
+            @if(Session('total_mcq') > 0)
+                <span class="font-bold text-green-600">Total Questions : {{Session('total_mcq')}}
+                 <span><a href="showMcq" class="font-bold text-yellow-600">Show Questions</a></span>
+                @else
+                    <span class="font-bold text-red-600">No Questions Added Yet !</span>
                 @endif
             </span>
             <h2 class="text-2xl text-center font-bold text-gray-600 mb-6">Add MCQs</h2>
