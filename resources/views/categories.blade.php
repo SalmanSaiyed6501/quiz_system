@@ -41,9 +41,12 @@
                         <li class="w-30">{{$category->id}}</li>
                         <li class="w-70">{{$category->name}}</li>
                         <li class="w-70">{{$category->creator}}</li>
-                        <li class="w-30">
+                        <li class="w-30 flex gap-2">
                             <a href="category/delete/{{$category->id}}" onclick="return confirm('Are You Want to Delete this ?');">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+                            </a>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-118 120-398l66-50 294 228 294-228 66 50-360 280Zm0-202L120-600l360-280 360 280-360 280Zm0-280Zm0 178 230-178-230-178-230 178 230 178Z"/></svg>
                             </a>
                         </li>
                     </ul>

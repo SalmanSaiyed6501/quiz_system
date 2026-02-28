@@ -10,11 +10,13 @@
     <x-navbar name={{$name}}></x-navbar>
     <div class="flex flex-col items-center min-h-screen pt-10">   
         <div class="w-200">
-            <h1 class="text-2xl text-blue-500 font-bold mb-3">{{ $catname }}</h1>
-            <a class="text-blue-500 hover:underline cursor-pointer" onclick="">Back</a>
+            <div class="flex justify-center items-center mb-5">
+                <h1 class="text-center mr-4 text-4xl font-bold tracking-tight text-heading">All Questions</h1> <a class="text-blue-500 hover:underline cursor-pointer text-lg text-yellow-800" onclick="window.history.back()">Back</a>
+            </div>
+            <h1 class="text-2xl text-blue-500 font-bold mb-3">Category Name :{{ $catname }}</h1>
             <ul class="border border-gray-200">
                 <ul class="flex justify-between font-bold p-2">
-                    <li class="w-30">Sr.No.</li>
+                    <li class="w-30">Que. ID</li>
                     <li class="w-70">Questions</li>
                     <li class="w-30">#</li>
                 </ul>

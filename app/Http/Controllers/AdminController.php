@@ -151,7 +151,6 @@ class AdminController extends Controller
             SESSION::put('total_mcq', $total_mcq);
             return redirect()->back();
         }
-
     }
 
     Public function clearSession(){
@@ -160,7 +159,7 @@ class AdminController extends Controller
         return redirect()->back();
     }    
     
-    Public function showMcq(){
+    Public function showQue(){
         $admin = Session::get('admin');
         if ($admin) {
             $catname = Session::get('quizDetails.name');
