@@ -44,7 +44,7 @@
             <span class="font-bold text-green-600">{{Session('quizDetails.name')}}</span><br>
             @if(Session('total_mcq') > 0)
                 <span class="font-bold text-green-600">Total Questions : {{Session('total_mcq')}}
-                 <span><a href="showMcq" class="font-bold text-yellow-600">Show Questions</a></span>
+                 <span><a href="showQue" class="font-bold text-yellow-600">Show Questions</a></span>
                 @else
                     <span class="font-bold text-red-600">No Questions Added Yet !</span>
                 @endif
