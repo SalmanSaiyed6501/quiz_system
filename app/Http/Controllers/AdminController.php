@@ -170,6 +170,16 @@ class AdminController extends Controller
         }
     }
 
+    Public function showQues($id, $name){
+        $admin = Session::get('admin');
+        if ($admin) {
+            $getQue = mcq::where('quiz_id', $id)->get();
+            return view('showQue',['getQue'=>$getQue, 'name'=>$admin, 'catname'=>$name]);
+        }else{
+            return redirect('admin-login');
+        }
+    }
+
      public function deleteQue($id){
         $isDeleted = mcq::find($id)->delete();
         if ($isDeleted) {
@@ -178,6 +188,16 @@ class AdminController extends Controller
             $total_mcq = mcq::where('quiz_id', Session::get('quizDetails.id'))->count();
             SESSION::put('total_mcq', $total_mcq);
             return redirect()->back();
+        }
+    }
+
+     public function quizList($id, $category){
+        $admin = Session::get('admin');
+        if ($admin) {
+            $quizData = quiz::where('categoryId', $id)->get();
+            return view('quiz-list',['quizData'=>$quizData, 'name'=>$admin,'category'=>$category]);
+        }else{
+            return redirect('admin-login');
         }
     }
 }
