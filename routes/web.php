@@ -2,7 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\userController;
 
+// For users
+Route::get('/', [userController::class, 'welcome']);
+
+// for Admin
 Route::get('/admin-login',[AdminController::class,'loginView']);
 Route::post('/admin-login',[AdminController::class,'login']);
 
