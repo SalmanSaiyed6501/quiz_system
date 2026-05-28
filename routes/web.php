@@ -6,6 +6,7 @@ use App\Http\Controllers\userController;
 
 // For users
 Route::get('/', [userController::class, 'welcome']);
+Route::get('/user-categories', [userController::class, 'userCategories']);
 
 // for Admin
 Route::get('/admin-login',[AdminController::class,'loginView']);
