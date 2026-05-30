@@ -46,7 +46,8 @@ class AdminController extends Controller
         $admin = Session::get('admin');
         if ($admin) {
             $categories = category::count();
-            return view('admin',["name"=>$admin, "categories"=>$categories]);
+            $quizzes = quiz::count();
+            return view('admin',["name"=>$admin, "categories"=>$categories, "quizzes"=>$quizzes]);
         }else{
             return redirect('admin-login');
         }
@@ -194,7 +195,7 @@ class AdminController extends Controller
      public function quizList($id, $category){
         $admin = Session::get('admin');
         if ($admin) {
-            $quizData = quiz::where('categoryId', $id)->get();
+            $quizData = quiz::where('category_Id', $id)->get();
             return view('quiz-list',['quizData'=>$quizData, 'name'=>$admin,'category'=>$category]);
         }else{
             return redirect('admin-login');

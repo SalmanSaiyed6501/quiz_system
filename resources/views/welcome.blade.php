@@ -14,5 +14,6 @@
     <div class="flex justify-center">
         <a href="user-categories" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Start Quiz</a>
     </div>
+    <x-footer></x-footer>
 </body>
 </html>

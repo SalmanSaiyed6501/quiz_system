@@ -24,7 +24,7 @@
                 <h3 class="text-3xl font-bold">Quiz</h3>
             </div>
             <div>
-                <h1 class="text-5xl font-bold text-green-800">{{$categories}}</h1>
+                <h1 class="text-5xl font-bold text-green-800">{{$quizzes}}</h1>
             </div>
         </div>
     </div>

@@ -7,6 +7,8 @@ use App\Http\Controllers\userController;
 // For users
 Route::get('/', [userController::class, 'welcome']);
 Route::get('/user-categories', [userController::class, 'userCategories']);
+Route::get('/user-quiz-list/{id}/{category}', [userController::class, 'userQuizList']);
+
 
 // for Admin
 Route::get('/admin-login',[AdminController::class,'loginView']);
