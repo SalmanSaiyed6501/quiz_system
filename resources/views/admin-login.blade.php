@@ -12,7 +12,7 @@
         <form action="/admin-login" method="post" class="space-y-4">
             @csrf
             @error('user')
-            <div class="text-red-500">{{$message}}</div>
+                <div class="text-red-500">{{$message}}</div>
             @enderror
             <div>
                 <label for="" class="text-gray-600 mb-1">Admin Name</label>

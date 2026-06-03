@@ -8,7 +8,8 @@ use App\Http\Controllers\userController;
 Route::get('/', [userController::class, 'welcome']);
 Route::get('/user-categories', [userController::class, 'userCategories']);
 Route::get('/user-quiz-list/{id}/{category}', [userController::class, 'userQuizList']);
-
+Route::view('user-signup','user-signup');
+Route::post('user-signup',[userController::class, 'userSignup']);
 
 // for Admin
 Route::get('/admin-login',[AdminController::class,'loginView']);

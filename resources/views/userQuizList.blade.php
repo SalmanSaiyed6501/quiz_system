@@ -26,7 +26,7 @@
                         <li class="w-70">{{$value->name}}</li>
                         <li class="w-30">
                             <a href="#" class="text-green-800 font-bold">
-                                Start Quiz
+                                Attempt Quiz
                             </a>
                         </li>
                     </ul>

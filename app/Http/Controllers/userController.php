@@ -22,5 +22,9 @@ class userController extends Controller
         $categoryName = $category;
         return view('userQuizList',Compact('quizData','categoryName'));
     }
+
+    public function userSignup(Request $request){
+        return $request->input();
+    }
 }
 

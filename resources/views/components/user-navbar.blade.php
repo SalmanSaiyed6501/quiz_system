@@ -5,6 +5,7 @@
     <div class="space-x-3">
         <a href="/" class="text-green-900 hover:text-black hover:font-bold">Home</a>
         <a href="user-categories" class="text-green-900 hover:text-black hover:font-bold">Categories</a>
+        <a href="user-signup" class="text-green-900 hover:text-black hover:font-bold">SignUp</a>
         <a href="user-login" class="text-green-900 hover:text-black hover:font-bold">Login</a>
         <a href="user-blogs" class="text-green-900 hover:text-black hover:font-bold">Blogs</a>
     </div>

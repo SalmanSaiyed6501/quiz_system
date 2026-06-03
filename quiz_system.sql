@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2025 at 11:44 AM
+-- Generation Time: Jun 03, 2026 at 04:01 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -106,7 +106,7 @@ INSERT INTO `mcqs` (`id`, `question`, `a`, `b`, `c`, `d`, `correct_ans`, `admin_
 CREATE TABLE `quiz` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `categoryId` int(10) NOT NULL,
+  `category_Id` int(10) NOT NULL,
   `creator` varchar(10) NOT NULL,
   `created_at` date NOT NULL,
   `updated_at` date NOT NULL
@@ -116,7 +116,7 @@ CREATE TABLE `quiz` (
 -- Dumping data for table `quiz`
 --
 
-INSERT INTO `quiz` (`id`, `name`, `categoryId`, `creator`, `created_at`, `updated_at`) VALUES
+INSERT INTO `quiz` (`id`, `name`, `category_Id`, `creator`, `created_at`, `updated_at`) VALUES
 (1, 'Object Oriented Programming', 1, 'salman', '2025-09-15', '2025-09-15'),
 (2, 'HTML, CSS, JavaScript (Core)', 1, 'salman', '2025-09-18', '2025-09-18'),
 (3, '5 HTML, CSS, JS Questions', 1, 'salman', '2025-09-18', '2025-09-18');
